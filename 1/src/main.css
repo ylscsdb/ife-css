@@ -1,0 +1,29 @@
+.container{
+	display: flex;
+	flex-direction: column;
+	width: 100px;
+	align-items: center;
+}
+
+.title.changed {
+    color: blue;
+}
+
+.line{
+	width: 0px;
+	height: 2px;
+	transition: width 2s;
+	background: blue;
+}
+.container.changed{
+	color: blue;
+}
+.container.changed .line{
+	width: 100%;
+}
+.button {
+	border-radius: 4px;
+	  background-color: transparent;
+	  border: 1px solid;
+	  outline: none;
+}

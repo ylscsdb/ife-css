@@ -1,13 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>webpack4 San</title>
-</head>
-<body>
-    <div id="app"></div>
-    <script src="main.js"></script>
-</body>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#div_switch{
+				background-image : linear-gradient(blue,blue);
+				background-position : center bottom;
+				background-size : 0 2px;
+				background-repeat : no-repeat; 
+				
+				transition:border 1s,color 1s,all 1s cubic-bezier(.50, .50, .50, .50);
+				-moz-transition:border 1s,color 1s,all 1s cubic-bezier(.50, .50, .50, .50);
+				-webkit-transition:border 1s,color 1s,all 1s cubic-bezier(.50, .50, .50, .50);
+			}
+			
+			#btn_cut{
+				border-radius: 5px;	
+				border: 1px solid #C9C9C9;
+				background-color: #fff;
+			}
+			
+		</style>
+		<script>
+			window.onload = function(){
+				var btnCut = document.getElementById("btn_cut");
+				var divSwitch = document.getElementById("div_switch");
+				var judge = 1;
+				btnCut.onclick = function(){
+					if(judge > 0){
+						divSwitch.style.color = "blue";
+						divSwitch.style.backgroundSize = "100% 2px";
+					}else{
+						divSwitch.style.color = "black";
+						divSwitch.style.backgroundSize = "0% 2px";
+					}
+					judge = judge * -1;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<span id="div_switch">
+			切换样式
+		</span>
+		<input type="button" id="btn_cut" value="切换样式" />
+	</body>
 </html>
